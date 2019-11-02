@@ -8,15 +8,18 @@ operators = {
     '-': operator.sub,
     '*': operator.mul,
     '/': operator.truediv,
+    '^': operator.pow,
 }
 
 def calculate(myarg):
     stack = list()
+
     for token in myarg.split():
         try:
             token = int(token)
             stack.append(token)
         except ValueError:
+            # handle stack of bracket
             function = operators[token]
             arg2 = stack.pop()
             arg1 = stack.pop()
