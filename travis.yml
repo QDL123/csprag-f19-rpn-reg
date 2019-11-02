@@ -7,4 +7,3 @@ script:
 - python -m unittest
 
 after-success:
-- coveralls
